@@ -90,6 +90,23 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+/*
+
+border: 15px solid white;
+    -webkit-border-radius: 20px;
+    box-shadow: 10px 10px 25px #131313;
+
+
+    .flipper {
+    transition: 0.4s;
+    transform-style: preserve-3d;
+    position: relative;
+    transform-origin: 100% 140px; /* half of height 
+}
+
+*/
+
+
 body {
     /* -webkit-linear-gradient(top, rgba(40,40,40,1) 0%,rgba(0,0,0,0) 80%) no-repeat, */
     background: url("../img/vi.png");
@@ -97,49 +114,73 @@ body {
     color: white;
 }
 
-.container {
-    margin: 400px auto;
+.scaleImg {
+    /* Scale image to fit parent while maintaining aspect ratio */
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.flip-container {
+    margin: 0 auto;
     perspective: 1000px;
 }
 
-.container:hover .flipper, .container.hover .flipper {
+/* flip the pane when hovered */
+.flip-container:hover .flipper, .flip-container.hover .flipper {
     transform: rotateX(180deg);
 }
 
-.container, .front, .back {
-    width: 320px;
-    height: 180px;
-    padding: 50px;
+.flip-container, .front, .back {
+    width: 600px;
+    height: 400px;
 }
 
+/* flip speed goes here */
 .flipper {
-    transition: 0.4s;
+    -webkit-transition: 0.6s;
+    transition: 0.6s;
+
+    -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
+
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+    transform-origin: 100% 200px; /* half of height */
+
     position: relative;
-    transform-origin: 100% 140px; /* half of height */
 }
 
+/* hide back of pane during swap */
 .front, .back {
+    -webkit-transition: 0.6s;
+    transition: 0.6s;
+
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+
     position: absolute;
     top: 0;
     left: 0;
-    border: 15px solid white;
-    -webkit-border-radius: 20px;
+
     box-shadow: 10px 10px 25px #131313;
 }
 
+/* front pane, placed above back */
 .front {
     z-index: 2;
     /* for firefox 31 */
     transform: rotateX(0deg);
-    background: red;
 }
 
 /* back, initially hidden pane */
 .back {
     transform: rotateX(180deg);
-    background: blue;
 }
 
 
