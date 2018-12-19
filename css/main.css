@@ -128,7 +128,7 @@ body {
 .flip-container {
     position: relative;
     margin: 230px auto;
-    margin-bottom: 300px;
+    margin-bottom: 350px;
     perspective: 1000px;
     left: -10px;
 }
@@ -230,6 +230,12 @@ body {
     top: -10px;
     right: 20px;
     transform: rotateZ(-8deg);
+}
+
+.unicorn {
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
 }
 
 /* c@@@@@7 */
