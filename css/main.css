@@ -133,8 +133,8 @@ body {
 }*/
 
 .flip-container, .front, .back {
-    width: 300px;
-    height: 200px;
+    width: 270px;
+    height: 180px;
 }
 
 /* flip speed goes here */
@@ -148,7 +148,7 @@ body {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 
-    transform-origin: 100% 100px; /* half of height */
+    transform-origin: 100% 90px; /* half of height */
 
     position: relative;
 }
