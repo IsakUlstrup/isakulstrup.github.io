@@ -22,7 +22,7 @@ function lastfmQuery (method, ignoreCache = false) {
 	if (getJSONCache(method) == null || ignoreCache == true) {
 		if (Debug == true) {console.log(method + " is not in cache or we are ignoring cache, sending request");}
 		var returnData;
-		$.getJSON("http://ws.audioscrobbler.com/2.0/?method=" + method + "&api_key="+ LastfmAPIKey +"&format=json&callback=?", function(queryResponse) {
+		$.getJSON("https://ws.audioscrobbler.com/2.0/?method=" + method + "&api_key="+ LastfmAPIKey +"&format=json&callback=?", function(queryResponse) {
 			if (queryResponse.error) {
 				returnData = 'Error: ' + queryResponse.message;
 			} else {
