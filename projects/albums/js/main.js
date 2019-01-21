@@ -39,22 +39,42 @@ function lastfmQuery (method, ignoreCache = false) {
 
 
 // Helper functions
+
+// Get most played albums for given artist
 function getTopAlbums (artist) {
 	lastfmQuery("artist.gettopalbums&artist=" + artist);
 }
 
+
+// Get most played artists for given user withing given period
 function getTopArtists (user = LastfmUser, period = "1month") {
 	lastfmQuery("user.gettopartists&user=" + user + "&period=" + period);
 }
 
 
+// Get played tracks for given user by given artist
+function getArtistTracks (artist, user = LastfmUser) {
+	lastfmQuery("user.getArtistTracks&user=" + user + "&artist=" + artist);
+}
 
+// Determine what albums user has heard by artist
+
+function hasHeardAlbum (artist, user = LastfmUser) {
+	// get top albums by artist
+	getTopAlbums(artist);
+	// get tracks user has heard
+	getArtistTracks(artist);
+	// compare
+}
 
 
 // Main code
 
-getTopArtists();
-getTopAlbums("Listener");
+//getTopArtists();
+//getTopAlbums("Listener");
+//getArtistTracks("Listener");
+
+hasHeardAlbum("Listener");
 
 
 
