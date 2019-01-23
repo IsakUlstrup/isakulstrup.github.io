@@ -103,10 +103,9 @@ body {
     padding: 5%;
 }
 
-
 .preview {
     font-size: 12pt;
-    line-height: 8px;
+    line-height: 5px;
     font-family: sans-serif;
     margin-top: 50px;
 }
