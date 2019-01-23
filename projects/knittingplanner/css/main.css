@@ -98,8 +98,17 @@ textarea {
    ========================================================================== */
 
 
+body {
+    background: url('../img/retina_wood.png');
+    padding: 5%;
+}
+
+
 .preview {
-    background: #888;
+    font-size: 12pt;
+    line-height: 8px;
+    font-family: sans-serif;
+    margin-top: 50px;
 }
 
 .preview ul {
