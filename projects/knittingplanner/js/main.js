@@ -27,10 +27,6 @@ function update () {
 		}
 	}
 
-	for (var i = 0; i < knitCount; i++) {
-		row += "v";
-	}
-
 	row += "/</li>";
 
 	//console.log(row);
