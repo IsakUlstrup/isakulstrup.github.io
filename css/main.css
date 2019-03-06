@@ -97,12 +97,57 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+@font-face {
+  font-family: Chunk;
+  src: url(../img/ChunkFive-Regular.woff);
+}
 
+@font-face {
+  font-family: Spartan;
+  src: url(../img/leaguespartan-bold.woff);
+}
 
+@font-face {
+  font-family: Raleway;
+  src: url(../img/raleway_thin-webfont.woff);
+}
 
+body {
+  background: url(../img/bg5.jpg);
+  background-attachment: fixed;
+  padding-top: 20%;
+  font-family: Raleway;
+  font-weight: 900;
+}
 
+.project {
+  background: white;
+  margin: 10% 0;
+  padding: 5%;
+}
 
+.projects .project:nth-child(odd) {
+  margin-right: 30%;
+}
 
+.projects .project:nth-child(even) {
+  margin-left: 30%;
+}
+
+.projects .project:nth-child(even) h1 {
+  text-align: right;
+}
+
+.project h1 {
+  font-family: Chunk;
+  font-size: 92pt;
+
+  background: url(../img/bg5.jpg);
+  background-attachment: fixed;
+  background-position: left top;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(0,0,0,0.2);
+}
 
 
 
