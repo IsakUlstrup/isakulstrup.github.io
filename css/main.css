@@ -112,8 +112,12 @@ textarea {
   src: url(../img/raleway_thin-webfont.woff);
 }
 
+::selection {
+  background: #DA2B5C; /* WebKit/Blink Browsers */
+}
+
 body {
-  background: url(../img/bg5.jpg);
+  background: url(../img/bg.jpg);
   background-attachment: fixed;
   padding-top: 20%;
   font-family: Raleway;
@@ -122,16 +126,17 @@ body {
 
 .project {
   background: white;
-  margin: 10% 0;
+  margin: 15% 0;
   padding: 5%;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
 }
 
 .projects .project:nth-child(odd) {
-  margin-right: 30%;
+  margin-right: 15%;
 }
 
 .projects .project:nth-child(even) {
-  margin-left: 30%;
+  margin-left: 15%;
 }
 
 .projects .project:nth-child(even) h1 {
@@ -140,13 +145,13 @@ body {
 
 .project h1 {
   font-family: Chunk;
-  font-size: 92pt;
+  font-size: 8vw;
 
-  background: url(../img/bg5.jpg);
+  background: url(../img/bg.jpg);
   background-attachment: fixed;
   background-position: left top;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: rgba(0,0,0,0.2);
+  -webkit-text-fill-color: rgba(0,0,0,0.0);
 }
 
 
