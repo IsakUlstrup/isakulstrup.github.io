@@ -117,7 +117,7 @@ textarea {
 }
 
 body {
-  background: url(../img/bg.jpg);
+  background: url(../img/bg5.jpg);
   background-attachment: fixed;
   padding-top: 20%;
   font-family: Raleway;
@@ -147,7 +147,7 @@ body {
   font-family: Chunk;
   font-size: 8vw;
 
-  background: url(../img/bg.jpg);
+  background: url(../img/bg5.jpg);
   background-attachment: fixed;
   background-position: left top;
   -webkit-background-clip: text;
