@@ -1,6 +1,6 @@
 
 // Global variables
-Debug = true
+Debug = false
 LastfmUser = "isakbarnet"
 LastfmAPIKey = "531454e3f1a0915bb5874e21deb59323"
 
@@ -57,6 +57,10 @@ function getArtistTracks (artist, user = LastfmUser) {
 	lastfmQuery("user.getArtistTracks&user=" + user + "&artist=" + artist);
 }
 
+function getAlbumInfo(artist, album) {
+	lastfmQuery("album.getinfo&artist=" + artist + "&album=" + album);
+}
+
 // Determine what albums user has heard by artist
 
 function hasHeardAlbum (artist, user = LastfmUser) {
@@ -70,13 +74,24 @@ function hasHeardAlbum (artist, user = LastfmUser) {
 
 // Main code
 
-//getTopArtists();
+getTopArtists();
 //getTopAlbums("Listener");
 //getArtistTracks("Listener");
+//hasHeardAlbum("Listener");
 
-hasHeardAlbum("Listener");
+var topArtists = getJSONCache("user.gettopartists&user=isakbarnet&period=1month");
 
+for (var i = topArtists.length - 1; i >= 0; i--) {
+	getTopAlbums(topArtists[i].name);
 
+	var artitstTopAlbums = getJSONCache("artist.gettopalbums&artist=" + topArtists[i].name)
+	console.log("#########################################");
+	console.log(topArtists[i].name + ": " + artitstTopAlbums[0].name);
+	getAlbumInfo(topArtists[i].name, artitstTopAlbums[0].name);
+
+	//console.log(getJSONCache("album.getinfo&artist=" + topArtists[i].name + "&album=" + artitstTopAlbums[0].name));
+
+}
 
 
 
